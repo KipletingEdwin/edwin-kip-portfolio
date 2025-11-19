@@ -4,11 +4,17 @@
 
 @theme{
     --font-grotesk: "Space Grotesk", sans-serif;
+    --color-dark: #0d0d0d;
+    --color-orange: #f97316;
 }
 
 @layer base{
     html{
         font-family: var(--font-grotesk);
+    }
+    body{
+        @apply bg-[#0d0d0d] text-white
+
     }
 }
 
