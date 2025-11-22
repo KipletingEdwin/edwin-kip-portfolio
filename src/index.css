@@ -1,16 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
 @import "tailwindcss";
 
 
 @theme{
     --font-grotesk: "Space Grotesk", sans-serif;
+    --font-outfit: "Outfit", sans-serif;
     --color-dark: #0d0d0d;
     --color-orange: #f97316;
 }
 
 @layer base{
     html{
-        font-family: var(--font-grotesk);
+        font-family: var(--font-outfit);
     }
     body{
         @apply bg-[#0d0d0d] text-white
