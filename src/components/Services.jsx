@@ -3,7 +3,7 @@ import Services_Data from "../data/services_data";
 
 const Services = () => {
   return (
-    <div id="services">
+    <section id="services" className="py-20 px-6 md:px-12">
       <div className="flex items-center justify-center flex-col">
         <h1 className="text-3xl py-3 font-bold">Services</h1>
         <p className="text-2xl">
@@ -16,8 +16,10 @@ const Services = () => {
           <div
             key={index}
             className="bg-[#1a1a1a] rounded-2xl p-8 shadow-lg 
-      flex flex-col items-center text-center 
-      hover:shadow-xl transition-shadow duration-300"
+                        flex flex-col items-center text-center 
+                        hover:shadow-xl transition-all duration-300 cursor-pointer ease-out"
+                        //transition-all duration-300 ease-out hover:shadow-xl hover:scale-[1.02]
+
           >
             <div className="text-orange-500 text-5xl mb-4">{service.icon}</div>
 
@@ -31,7 +33,7 @@ const Services = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,5 +1,7 @@
 import React from "react";
 import profile_img from "../assets/profile_img.jpg";
+import Skills_Data from '../data/skills_data';
+import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 
 const About = () => {
   return (
@@ -24,7 +26,7 @@ const About = () => {
             <img
               src={profile_img}
               alt="Profile"
-              className="w-full object-cover"
+              className="w-full  object-cover transition-all duration-300 ease-out hover:scale-105"
             />
           </div>
         </div>
@@ -56,6 +58,33 @@ const About = () => {
             Let’s Connect
           </button>
         </div>
+        {/* Skills Rating Bar */}
+
+{/* Skills Rating Bar */}
+<div className="mt-16">
+  <h3 className="text-2xl font-semibold text-center mb-10">My Tools & Proficiency</h3>
+  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 justify-items-center">
+    {Skills_Data.map((skill, index) => (
+      <div key={index} className="flex flex-col items-center">
+        <div className="w-24 h-24 mb-4">
+          <CircularProgressbar
+            value={skill.percentage}
+            text={`${skill.percentage}%`}
+            styles={buildStyles({
+              textColor: "#fff",
+              pathColor: "#f97316", // Tailwind orange-500
+              trailColor: "#333",
+            })}
+          />
+        </div>
+        <div className="mb-2"> {skill.icon}</div>
+        <p className="text-sm text-gray-300">{skill.name}</p>
+      </div>
+    ))}
+  </div>
+</div>
+
+
       </div>
     </section>
 
