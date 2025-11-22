@@ -15,9 +15,10 @@
 @layer base{
     html{
         font-family: var(--font-outfit);
+        scroll-behavior: smooth;
     }
     body{
-        @apply bg-[#0d0d0d] text-white
+        @apply bg-dark text-white
 
     }
 }

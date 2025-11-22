@@ -5,11 +5,11 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="w-full fixed top-0 left-0 bg-[#0d0d0d]/80 backdrop-blur-md z-50 px-6 py-4 flex justify-between items-center border-b border-white/5">
+    <nav className="w-full fixed top-0 left-0 bg-dark/80 backdrop-blur-md z-50 px-6 py-4 flex justify-between items-center border-b border-white/5">
       
       {/* Logo */}
       <Link to="/" className="text-3xl font-extrabold">
-        <span className="bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">
+        <span className="bg-linear-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">
           Edwin
         </span>
       </Link>
@@ -59,7 +59,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`absolute left-0 top-full w-full bg-[#0d0d0d] md:hidden flex flex-col items-center gap-6 py-6 text-lg text-gray-300 font-medium transition-all duration-300 ${
+        className={`absolute left-0 top-full w-full bg-dark md:hidden flex flex-col items-center gap-6 py-6 text-lg text-gray-300 font-medium transition-all duration-300 ${
           open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
         }`}
       >

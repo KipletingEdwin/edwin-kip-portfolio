@@ -1,12 +1,14 @@
 import React from "react";
-import Services_Data from '../data/services_data';
+import Services_Data from "../data/services_data";
 
 const Services = () => {
   return (
-    <div>
+    <div id="services">
       <div className="flex items-center justify-center flex-col">
         <h1 className="text-3xl py-3 font-bold">Services</h1>
-        <p className="text-2xl">Creative intuitive and user-friendly designs through ux research</p>
+        <p className="text-2xl">
+          Creative intuitive and user-friendly designs through ux research
+        </p>
       </div>
 
       <div className="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -17,9 +19,7 @@ const Services = () => {
       flex flex-col items-center text-center 
       hover:shadow-xl transition-shadow duration-300"
           >
-            <div className="text-orange-500 text-5xl mb-4">
-      {service.icon}
-      </div>
+            <div className="text-orange-500 text-5xl mb-4">{service.icon}</div>
 
             <h3 className="text-xl font-semibold text-white mb-3">
               {service.s_name}
@@ -36,7 +36,3 @@ const Services = () => {
 };
 
 export default Services;
-
-// padding: 0px 30px;
-// font-size: 50px;
-// font-weight: 600;

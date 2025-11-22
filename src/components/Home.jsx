@@ -20,7 +20,7 @@ const item = {
 
 const Home = () => {
   return (
-    <section className="w-full min-h-screen flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-24 bg-[#0d0d0d] overflow-hidden">
+    <section className="w-full min-h-screen flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-24 bg-dark overflow-hidden">
 
       {/* LEFT TEXT */}
       <motion.div
@@ -34,7 +34,7 @@ const Home = () => {
           className="text-5xl md:text-7xl font-extrabold leading-tight"
         >
           Hi, I'm{" "}
-          <span className="bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">
             Edwin
           </span>
         </motion.h1>
