@@ -1,6 +1,7 @@
 import React from "react";
 import heroImg from "../assets/profile_img.jpg";
 import { motion } from "framer-motion";
+//import { motion } from "motion/react"
 
 // Fade + Stagger Animation
 const container = {
@@ -20,7 +21,7 @@ const item = {
 
 const Home = () => {
   return (
-    <section className="w-full min-h-screen flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-24 bg-dark overflow-hidden">
+    <section id="home" className="w-full min-h-screen flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-24 bg-dark overflow-hidden">
 
       {/* LEFT TEXT */}
       <motion.div

@@ -3,7 +3,7 @@ import { FaInstagram, FaLinkedin, FaDribbble, FaBehance } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-10 px-6">
+    <footer id="footer" className="bg-gray-900 text-white py-10 px-6">
       <div className="max-w-6xl mx-auto text-center space-y-6">
         {/* Logo */}
         <h1 className="text-3xl font-bold bg-gradient-to-r from-red-500 to-orange-500 text-transparent bg-clip-text">

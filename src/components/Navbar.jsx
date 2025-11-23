@@ -5,7 +5,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="w-full fixed top-0 left-0 bg-dark/80 backdrop-blur-md z-50 px-6 py-4 flex justify-between items-center border-b border-white/5">
+    <nav id="navbar" className="w-full fixed top-0 left-0 bg-dark/80 backdrop-blur-md z-50 px-6 py-4 flex justify-between items-center border-b border-white/5">
       
       {/* Logo */}
       <Link to="/" className="text-3xl font-extrabold">
