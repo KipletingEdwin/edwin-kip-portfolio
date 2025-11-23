@@ -22,6 +22,10 @@ const item = {
 
 
 const About = () => {
+
+
+
+
   return (
     <motion.section
     variants={container}
@@ -51,12 +55,12 @@ const About = () => {
          className="flex justify-center">
           <motion.div 
           variants={item}
-          className="bg-[#1A1A1A] rounded-[50px] rounded-b-none w-[320px] md:w-[380px] h-[480px] md:h-[520px] flex items-end overflow-hidden">
-            <motion.img
+          className="bg-[#1A1A1A] rounded-t-[200px] w-[320px] md:w-[380px] h-[480px] md:h-[520px] flex items-end overflow-hidden">
+            <img
             variants={item}
               src={profile_img}
               alt="Profile"
-              className="w-full  object-cover transition-all duration-300 ease-out hover:scale-105"
+              className="w-full object-cover transition-all duration-300 ease-out hover:scale-105"
             />
           </motion.div>
         </motion.div>
