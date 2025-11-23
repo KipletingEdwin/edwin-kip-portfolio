@@ -1,7 +1,6 @@
 import React from "react";
 import heroImg from "../assets/profile_img.jpg";
-import { motion } from "framer-motion";
-//import { motion } from "motion/react"
+import { motion } from "motion/react"
 
 // Fade + Stagger Animation
 const container = {
@@ -34,8 +33,8 @@ const Home = () => {
           variants={item}
           className="text-5xl md:text-7xl font-extrabold leading-tight"
         >
-          Hi, I'm{" "}
-          <span className="bg-linear-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">
+          Hi, I'm {" "}
+          <span className="bg-linear-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent ">
             Edwin
           </span>
         </motion.h1>
@@ -73,9 +72,9 @@ const Home = () => {
           className="grid grid-cols-3 gap-6 mt-10 max-w-md"
         >
           {[
-            { num: "3+", label: "Years Experience" },
-            { num: "20+", label: "Projects" },
-            { num: "10+", label: "Clients" },
+            { num: "1+", label: "Years Experience" },
+            { num: "3+", label: "Projects" },
+            { num: "2+", label: "Clients" },
           ].map((stat, i) => (
             <motion.div
               key={i}

@@ -37,7 +37,7 @@ export default function Footer() {
         </div>
 
         {/* Contact Info */}
-        <div className="text-sm text-gray-400">
+        <div className=" flex flex-row items-center justify-center gap-12 text-sm text-gray-400">
           <p>Email: <a href="mailto:zahooralishah44@gmail.com" className="hover:text-orange-500">kipletingedwin4@gmail.com</a></p>
           <p>Phone: <a href="tel:+923555313486" className="hover:text-orange-500">+923555313486</a></p>
         </div>

@@ -15,61 +15,55 @@ export default function Contact() {
         <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* First Name */}
           <div>
-            <label className="block mb-1 text-sm">First Name</label>
             <input
               type="text"
               className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
-              placeholder="John"
+              placeholder="First Name"
             />
           </div>
 
           {/* Last Name */}
           <div>
-            <label className="block mb-1 text-sm">Last Name</label>
             <input
               type="text"
               className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
-              placeholder="Doe"
+              placeholder="Last Name"
             />
           </div>
 
           {/* Email */}
           <div>
-            <label className="block mb-1 text-sm">Enter Email</label>
             <input
               type="email"
               className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
-              placeholder="you@example.com"
+              placeholder="Enter Email"
             />
           </div>
 
           {/* Address */}
-          <div>
-            <label className="block mb-1 text-sm">Address</label>
+          {/* <div>
             <input
               type="text"
               className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
-              placeholder="123 Street, City"
+              placeholder="Address"
             />
-          </div>
+          </div> */}
 
           {/* Phone Number */}
           <div>
-            <label className="block mb-1 text-sm">Phone Number</label>
             <input
               type="tel"
               className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
-              placeholder="+254 700 000000"
+              placeholder="Phone Number"
             />
           </div>
 
           {/* Project Details */}
           <div className="md:col-span-2">
-            <label className="block mb-1 text-sm">Project Details...</label>
             <textarea
               rows="5"
               className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
-              placeholder="Tell me about your project..."
+              placeholder="Project Details..."
             ></textarea>
           </div>
 
