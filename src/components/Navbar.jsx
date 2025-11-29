@@ -1,51 +1,92 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("home");
+
+  // Handle scroll for navbar shadow
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      // Update active section based on scroll
+      const sections = ["home", "about", "services", "projects", "contact"];
+      sections.forEach((section) => {
+        const elem = document.getElementById(section);
+        if (elem) {
+          const top = elem.offsetTop - 100;
+          const bottom = top + elem.offsetHeight;
+          if (window.scrollY >= top && window.scrollY < bottom) {
+            setActive(section);
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const links = [
+    { name: "Home", to: "home" },
+    { name: "About", to: "about" },
+    { name: "Services", to: "services" },
+    { name: "Projects", to: "projects" },
+    { name: "Contact", to: "contact" },
+  ];
 
   return (
-    <nav id="navbar" className="w-full fixed top-0 left-0 bg-dark/80 backdrop-blur-md z-50 px-6 py-4 flex justify-between items-center border-b border-white/5">
-      
+    <nav
+      className={`w-full fixed top-0 left-0 z-50 px-6 py-4 flex justify-between items-center border-b transition-all duration-300 ${
+        scrolled
+          ? "bg-dark/90 backdrop-blur-md border-white/10 shadow-md"
+          : "bg-dark/80 border-white/5"
+      }`}
+    >
       {/* Logo */}
-      <Link to="/" className="text-3xl font-extrabold">
+      <div
+        className="text-3xl font-extrabold cursor-pointer"
+        onClick={() => scroll.scrollToTop({ duration: 500 })}
+      >
         <span className="bg-linear-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">
           Edwin
         </span>
-      </Link>
+      </div>
 
       {/* Desktop Menu */}
       <ul className="hidden md:flex items-center gap-10 text-gray-300 font-medium text-lg">
-        <li>
-          <Link to="/" className="hover:text-white transition">Home</Link>
-        </li>
-        <li>
-          <Link to="/about" className="hover:text-white transition">About</Link>
-        </li>
-        <li>
-          <Link to="/services" className="hover:text-white transition">Services</Link>
-        </li>
-        <li>
-          <Link to="/projects" className="hover:text-white transition">Projects</Link>
-        </li>
-        <li>
-          <Link to="/contact" className="hover:text-white transition">Contact</Link>
-        </li>
+        {links.map((link) => (
+          <li key={link.to}>
+            <ScrollLink
+              to={link.to}
+              smooth={true}
+              duration={500}
+              offset={-80} // adjust for navbar height
+              className={`cursor-pointer transition hover:text-white ${
+                active === link.to ? "text-white font-bold" : ""
+              }`}
+            >
+              {link.name}
+            </ScrollLink>
+          </li>
+        ))}
       </ul>
 
       {/* Desktop Button */}
-      <Link
-        to="/contact"
-        className="hidden md:block px-6 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition"
+      <ScrollLink
+        to="contact"
+        smooth={true}
+        duration={500}
+        offset={-80}
+        className="hidden md:block px-6 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition cursor-pointer"
       >
         Let's Connect
-      </Link>
+      </ScrollLink>
 
       {/* Mobile toggle */}
-      <button
-        className="md:hidden text-gray-300"
-        onClick={() => setOpen(!open)}
-      >
+      <button className="md:hidden text-gray-300" onClick={() => setOpen(!open)}>
         {open ? (
           <svg className="w-8 h-8" fill="none" stroke="currentColor">
             <path strokeLinecap="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
@@ -63,19 +104,32 @@ const Navbar = () => {
           open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
         }`}
       >
-        <Link to="/" onClick={() => setOpen(false)} className="hover:text-white transition">Home</Link>
-        <Link to="/about" onClick={() => setOpen(false)} className="hover:text-white transition">About</Link>
-        <Link to="/services" onClick={() => setOpen(false)} className="hover:text-white transition">Services</Link>
-        <Link to="/projects" onClick={() => setOpen(false)} className="hover:text-white transition">Projects</Link>
-        <Link to="/contact" onClick={() => setOpen(false)} className="hover:text-white transition">Contact</Link>
+        {links.map((link) => (
+          <ScrollLink
+            key={link.to}
+            to={link.to}
+            smooth={true}
+            duration={500}
+            offset={-80}
+            className={`cursor-pointer hover:text-white transition ${
+              active === link.to ? "text-white font-bold" : ""
+            }`}
+            onClick={() => setOpen(false)}
+          >
+            {link.name}
+          </ScrollLink>
+        ))}
 
-        <Link
-          to="/contact"
+        <ScrollLink
+          to="contact"
+          smooth={true}
+          duration={500}
+          offset={-80}
+          className="px-6 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition cursor-pointer"
           onClick={() => setOpen(false)}
-          className="px-6 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition"
         >
           Let's Connect
-        </Link>
+        </ScrollLink>
       </div>
     </nav>
   );
