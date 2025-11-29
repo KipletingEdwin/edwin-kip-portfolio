@@ -57,7 +57,7 @@ const About = () => {
         animate={inView ? "visible" : "hidden"}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl font-bold">About Me</h2>
+        <h2 className="text-4xl font-bold bg-linear-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">About Me</h2> 
         <p className="text-gray-400 mt-2">
           User Interface, User Experience, and Graphic Designer
         </p>

@@ -67,7 +67,7 @@ const Contact = () => {
       animate={inView ? "visible" : "hidden"}
     >
       <motion.div variants={fadeLeft} className="max-w-4xl mx-auto text-center mb-16">
-        <h2 className="text-4xl font-bold">Contact Me</h2>
+        <h2 className="text-4xl font-bold bg-linear-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">Contact Me</h2>   
         <p className="text-gray-400 mt-2">Cultivating Connections: Reach Out And Connect With Me.</p>
       </motion.div>
 

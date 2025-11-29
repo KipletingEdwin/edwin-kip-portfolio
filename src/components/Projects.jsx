@@ -6,7 +6,7 @@ export default function Projects() {
   return (
     <section id="projects" className="max-w-6xl mx-auto px-4 py-12">
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold">Projects</h2>
+        <h2 className="text-4xl font-bold bg-linear-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">Projects</h2> 
         <p className="text-gray-400 mt-2">
           Here are some of the projects I have worked on
         </p>
