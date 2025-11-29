@@ -76,12 +76,12 @@ const About = () => {
             ref={parallaxRef}
             style={{ y: parallaxY }}
             className="bg-[#1A1A1A] rounded-t-[200px] w-[320px] md:w-[380px]
-                       h-[480px] md:h-[520px] flex items-end overflow-hidden shadow-xl"
+                       h-[480px] md:h-[520px] overflow-hidden "
           >
             <motion.img
               src={profile_img}
               alt="Profile"
-              className="w-full object-cover transition-all duration-300 hover:scale-105"
+              className="w-full object-cover transition-all duration-300 ease-out hover:scale-105"
               whileHover={{ scale: 1.05 }}
             />
           </motion.div>

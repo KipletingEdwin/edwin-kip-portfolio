@@ -122,12 +122,6 @@ export default function Footer() {
               kipletingedwin4@gmail.com
             </a>
           </p>
-          <p>
-            Phone:{" "}
-            <a href="tel:+923555313486" className="hover:text-orange-500">
-              +923555313486
-            </a>
-          </p>
         </motion.div>
 
         {/* Credit */}
