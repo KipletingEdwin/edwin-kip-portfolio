@@ -102,7 +102,7 @@ const Contact = () => {
             <input
               type="tel"
               name="phoneNumber"
-              placeholder="Phone Number (optional)"
+              placeholder="Phone Number"
               className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
             />
           </div>
