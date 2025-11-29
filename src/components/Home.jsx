@@ -87,7 +87,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.18 }}
-              className="text-center p-4 rounded-xl border border-gray-700 bg-[#161616] hover:border-orange-500 transition-all shadow-lg hover:shadow-orange-500/40 wrap-break-words"
+              className="text-center p-4 rounded-xl border border-gray-700 bg-[#161616] hover:border-orange-500 transition-all shadow-lg hover:shadow-orange-500/40 wrap-break-word"
             >
               <h3 className="text-3xl font-bold text-orange-400">{stat.num}</h3>
               <p className="text-sm text-gray-400">{stat.label}</p>
