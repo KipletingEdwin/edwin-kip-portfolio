@@ -6,10 +6,12 @@ import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
     <>
+      <Toaster  position="top-right" />
       <Navbar />
       <Home />
       <Services />
