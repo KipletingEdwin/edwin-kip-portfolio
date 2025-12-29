@@ -2,12 +2,8 @@ import React, { useRef } from "react";
 import profile_img from "../assets/profile_img.jpg";
 import Skills_Data from "../data/skills_data";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
-import {
-  motion,
-  useInView,
-  useScroll,
-  useTransform,
-} from "motion/react";
+import { motion, useInView, useScroll, useTransform } from "motion/react";
+import SectionHeader from "./SectionHeader";
 
 // Fade-left and fade-right animations
 const fadeLeft = {
@@ -50,18 +46,11 @@ const About = () => {
       ref={sectionRef}
       className="text-white py-20 px-6 md:px-12"
     >
-      {/* Heading */}
-      <motion.div
-        variants={fadeLeft}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        className="text-center mb-16"
-      >
-        <h2 className="text-4xl font-bold bg-linear-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">About Me</h2> 
-        <p className="text-gray-400 mt-2">
-          User Interface, User Experience, and Graphic Designer
-        </p>
-      </motion.div>
+      {/* Header */}
+      <SectionHeader
+        title="About Me"
+        subtitle="User Interface, User Experience, and Graphic Designer"
+      />
 
       {/* Main Grid */}
       <motion.div

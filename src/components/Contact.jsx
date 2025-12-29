@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
+import SectionHeader from "./SectionHeader";
 
 const Contact = () => {
   const form = useRef();
@@ -66,10 +67,10 @@ const Contact = () => {
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
     >
-      <motion.div variants={fadeLeft} className="max-w-4xl mx-auto text-center mb-16">
-        <h2 className="text-4xl font-bold bg-linear-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">Contact Me</h2>   
-        <p className="text-gray-400 mt-2">Cultivating Connections: Reach Out And Connect With Me.</p>
-      </motion.div>
+      <SectionHeader
+        title="Contact Me"
+        subtitle="Cultivating Connections: Reach Out And Connect With Me."
+      />
 
       <motion.form
         ref={form}

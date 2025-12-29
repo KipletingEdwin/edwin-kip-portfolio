@@ -3,6 +3,7 @@ import { FaInstagram, FaLinkedin, FaDribbble, FaBehance } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Github, Instagram, Linkedin } from "lucide-react";
 
 export default function Footer() {
   const footerRef = useRef(null);
@@ -12,8 +13,7 @@ export default function Footer() {
     { name: "Home", to: "home" },
     { name: "Services", to: "services" },
     { name: "About Me", to: "about" },
-    { name: "Portfolio", to: "projects" },
-    { name: "Testimonials", to: "testimonials" },
+    { name: "Projects", to: "projects" },
     { name: "Contact Me", to: "contact" },
   ];
 
@@ -39,7 +39,7 @@ export default function Footer() {
           variants={variants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="text-3xl font-bold bg-gradient-to-r from-red-500 to-orange-500 text-transparent bg-clip-text cursor-pointer"
+          className="text-3xl font-bold bg-linear-to-r from-red-500 to-orange-500 text-transparent bg-clip-text cursor-pointer"
         >
           Edwin
         </motion.h1>
@@ -54,7 +54,7 @@ export default function Footer() {
         >
           {links.map((link, index) => (
             <ScrollLink
-              key={link.to}
+              key={index}
               to={link.to}
               smooth={true}
               duration={500}
@@ -80,32 +80,25 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="hover:text-orange-500 transition"
           >
-            <FaInstagram />
+            <Instagram size={22} />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/kipleting-edwin/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-orange-500 transition"
           >
-            <FaLinkedin />
+            <Linkedin size={22} />
           </a>
           <a
-            href="https://dribbble.com"
+            href="https://github.com/KipletingEdwin"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-orange-500 transition"
           >
-            <FaDribbble />
+            <Github size={22} />
           </a>
-          <a
-            href="https://behance.net"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-orange-500 transition"
-          >
-            <FaBehance />
-          </a>
+
         </motion.div>
 
         {/* Contact Info */}

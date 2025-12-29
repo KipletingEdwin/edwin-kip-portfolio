@@ -6,6 +6,7 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
+import SectionHeader from "./SectionHeader";
 
 const fadeLeft = {
   hidden: { opacity: 0, x: -40 },
@@ -33,17 +34,10 @@ const Services = () => {
       className="py-20 px-6 md:px-12"
     >
       {/* Header */}
-      <motion.div
-        variants={fadeLeft}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        className="flex items-center justify-center flex-col text-center mb-12"
-      >
-        <h1 className="text-3xl py-3 font-bold bg-linear-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">Services</h1>  
-        <p className="text-2xl text-gray-300 max-w-2xl">
-          Creative intuitive and user-friendly designs through UX research
-        </p>
-      </motion.div>
+      <SectionHeader 
+      title="Services"
+      subtitle="Creative intuitive and user-friendly designs through UX research"
+      />
 
       {/* Services Grid */}
       <motion.div
