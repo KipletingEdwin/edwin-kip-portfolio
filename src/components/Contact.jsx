@@ -63,7 +63,7 @@ const Contact = () => {
       id="contact"
       ref={sectionRef}
       style={{ y: parallaxY }}
-      className="bg-gray-900 text-white py-12 px-6"
+      className=" text-white py-12 px-6"
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
     >

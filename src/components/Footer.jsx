@@ -30,7 +30,7 @@ export default function Footer() {
     <footer
       ref={footerRef}
       id="footer"
-      className="bg-gray-900 text-white py-10 px-6 overflow-hidden"
+      className=" text-white py-10 px-6 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto text-center space-y-6">
         {/* Logo */}

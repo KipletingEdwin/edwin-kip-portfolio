@@ -1,14 +1,73 @@
-import { Figma, PenTool, Image, Brush, Video } from 'lucide-react';
+// src/data/skills.js
+import {
+  Code2,
+  Palette,
+  Terminal,
+  Layers,
+  Globe,
+  FileCode,
+  Braces,
+  Smartphone,
+  Gem,
+} from "lucide-react";
 
-const Skills_Data = [
-  { name: "JavaScript", percentage: 88, icon: <Figma size={24} color="#fff" /> },
-  { name: "ReactJs", percentage: 93, icon: <PenTool size={24} color="#fff" /> },
-  { name: "Tailwind CSS", percentage: 80, icon: <Image size={24} color="#fff" /> },
-  { name: "Angular Js", percentage: 84, icon: <Brush size={24} color="#fff" /> },
-  { name: "TypeScript", percentage: 87, icon: <Video size={24} color="#fff" /> },
-  { name: "Ionic Framework", percentage: 89, icon: <Video size={24} color="#fff" /> },
-  { name: "Ruby", percentage: 79, icon: <Video size={24} color="#fff" /> },
-  { name: "Ruby on Rails", percentage: 87, icon: <Video size={24} color="#fff" /> },
+export const Skills_Data = [
+  {
+    name: "JavaScript",
+    icon: Braces,
+    description:
+      "Writing dynamic, interactive logic for modern web applications.",
+  },
+  {
+    name: "HTML",
+    icon: FileCode,
+    description:
+      "Structuring clean, semantic markup as the foundation of every interface.",
+  },
+  {
+    name: "CSS",
+    icon: Palette,
+    description:
+      "Crafting responsive layouts and visual systems with precision and creativity.",
+  },
+  {
+    name: "React",
+    icon: Code2,
+    description:
+      "Building fast, modular interfaces with hooks and component architecture.",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: Globe,
+    description:
+      "Designing responsive, modern UI with utility‑first styling and custom themes.",
+  },
+  {
+    name: "TypeScript",
+    icon: Terminal,
+    description:
+      "Writing safer, scalable code with strong typing and powerful tooling.",
+  },
+  {
+    name: "Ionic + Angular",
+    icon: Smartphone,
+    description:
+      "Developing cross‑platform mobile apps with Angular components and Ionic UI.",
+  },
+  {
+    name: "Ruby",
+    icon: Gem,
+    description:
+      "Writing expressive, elegant backend logic with a focus on clarity.",
+  },
+  {
+    name: "Ruby on Rails",
+    icon: Layers,
+    description:
+      "Designing clean APIs, authentication, and fullstack workflows.",
+  },
 ];
 
+
 export default Skills_Data;
+
