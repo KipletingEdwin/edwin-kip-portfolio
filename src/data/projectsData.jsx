@@ -1,6 +1,6 @@
-import iReporterImg from "../assets/iReporter.jpg";
-import flightBookingImg from "../assets/flightbooking.png";
-import employeeImg from "../assets/Employee.png";
+import iReporterImg from "../assets/images/iReporter.jpg";
+import flightBookingImg from "../assets/images/flightbooking.png";
+import employeeImg from "../assets/images/Employee.png";
 
 const projectsData = [
   {

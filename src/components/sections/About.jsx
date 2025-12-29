@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
-import profile_img from "../assets/profile_img.jpg";
+import profile_img from "../../assets/images/profile_img.jpg";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
-import SectionHeader from "./SectionHeader";
-import SkillCard from "./SkillCard";
-import Skills_Data from "../data/skills_data";
+import SectionHeader from "../common/SectionHeader";
+import SkillCard from "../common/SkillCard";
+import Skills_Data from "../../data/skills_data";
 
 // Animation variants
 const fadeLeft = {

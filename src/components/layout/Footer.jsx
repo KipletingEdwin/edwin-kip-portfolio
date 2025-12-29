@@ -1,8 +1,6 @@
-import React from "react";
-import { FaInstagram, FaLinkedin, FaDribbble, FaBehance } from "react-icons/fa";
+import React, { useRef } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import { Github, Instagram, Linkedin } from "lucide-react";
 
 export default function Footer() {
@@ -11,18 +9,18 @@ export default function Footer() {
 
   const links = [
     { name: "Home", to: "home" },
+    { name: "About", to: "about" },
     { name: "Services", to: "services" },
-    { name: "About Me", to: "about" },
     { name: "Projects", to: "projects" },
-    { name: "Contact Me", to: "contact" },
+    { name: "Contact", to: "contact" },
   ];
 
-  const variants = {
-    hidden: { opacity: 0, y: 30 },
+  const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
     visible: (i = 1) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" },
+      transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
     }),
   };
 
@@ -30,16 +28,17 @@ export default function Footer() {
     <footer
       ref={footerRef}
       id="footer"
-      className=" text-white py-10 px-6 overflow-hidden"
+      className="text-white py-14 px-6 bg-dark border-t border-white/10"
     >
-      <div className="max-w-6xl mx-auto text-center space-y-6">
+      <div className="max-w-6xl mx-auto text-center space-y-8">
         {/* Logo */}
         <motion.h1
           custom={0}
-          variants={variants}
+          variants={fadeUp}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="text-3xl font-bold bg-linear-to-r from-red-500 to-orange-500 text-transparent bg-clip-text cursor-pointer"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="text-3xl font-extrabold bg-linear-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text cursor-pointer"
         >
           Edwin
         </motion.h1>
@@ -47,7 +46,7 @@ export default function Footer() {
         {/* Navigation */}
         <motion.nav
           custom={1}
-          variants={variants}
+          variants={fadeUp}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           className="flex flex-wrap justify-center gap-6 text-sm text-gray-300"
@@ -56,7 +55,7 @@ export default function Footer() {
             <ScrollLink
               key={index}
               to={link.to}
-              smooth={true}
+              smooth
               duration={500}
               offset={-80}
               className="hover:text-orange-500 transition cursor-pointer"
@@ -69,10 +68,10 @@ export default function Footer() {
         {/* Social Icons */}
         <motion.div
           custom={2}
-          variants={variants}
+          variants={fadeUp}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="flex justify-center gap-6 text-xl text-gray-400"
+          className="flex justify-center gap-6 text-gray-400"
         >
           <a
             href="https://instagram.com"
@@ -82,6 +81,7 @@ export default function Footer() {
           >
             <Instagram size={22} />
           </a>
+
           <a
             href="https://www.linkedin.com/in/kipleting-edwin/"
             target="_blank"
@@ -90,6 +90,7 @@ export default function Footer() {
           >
             <Linkedin size={22} />
           </a>
+
           <a
             href="https://github.com/KipletingEdwin"
             target="_blank"
@@ -98,20 +99,22 @@ export default function Footer() {
           >
             <Github size={22} />
           </a>
-
         </motion.div>
 
         {/* Contact Info */}
         <motion.div
           custom={3}
-          variants={variants}
+          variants={fadeUp}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="flex flex-col md:flex-row items-center justify-center gap-6 text-sm text-gray-400"
+          className="text-sm text-gray-400"
         >
           <p>
             Email:{" "}
-            <a href="mailto:kipletingedwin4@gmail.com" className="hover:text-orange-500">
+            <a
+              href="mailto:kipletingedwin4@gmail.com"
+              className="hover:text-orange-500"
+            >
               kipletingedwin4@gmail.com
             </a>
           </p>
@@ -120,12 +123,13 @@ export default function Footer() {
         {/* Credit */}
         <motion.p
           custom={4}
-          variants={variants}
+          variants={fadeUp}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="text-xs text-gray-500 mt-4"
+          className="text-xs text-gray-500 pt-4"
         >
-          Designed by <span className="text-orange-500">@Edwin Kipleting</span>
+          Designed by{" "}
+          <span className="text-orange-500">@Edwin Kipleting</span>
         </motion.p>
       </div>
     </footer>

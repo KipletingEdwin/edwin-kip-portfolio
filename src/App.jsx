@@ -1,12 +1,12 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import About from "./components/About";
-import Services from "./components/Services";
-import Contact from "./components/Contact";
-import Projects from "./components/Projects";
-import Footer from "./components/Footer";
+import Home from "./components/sections/Home";
+import About from "./components/sections/About";
+import Services from "./components/sections/Services";
+import Contact from "./components/sections/Contact";
+import Projects from "./components/sections/Projects";
+import Footer from "./components/layout/Footer";
 import { Toaster } from "react-hot-toast";
+import Navbar from "./components/layout/Navbar";
 
 const App = () => {
   return (

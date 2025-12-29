@@ -1,33 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
-const Navbar = () => {
+export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
-
-  // Handle scroll for navbar shadow
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-
-      // Update active section based on scroll
-      const sections = ["home", "about", "services", "projects", "contact"];
-      sections.forEach((section) => {
-        const elem = document.getElementById(section);
-        if (elem) {
-          const top = elem.offsetTop - 100;
-          const bottom = top + elem.offsetHeight;
-          if (window.scrollY >= top && window.scrollY < bottom) {
-            setActive(section);
-          }
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const links = [
     { name: "Home", to: "home" },
@@ -36,6 +13,31 @@ const Navbar = () => {
     { name: "Projects", to: "projects" },
     { name: "Contact", to: "contact" },
   ];
+
+  // Handle scroll effects
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      const sections = links.map((l) => l.to);
+      const scrollPos = window.scrollY + 120; // offset for navbar height
+
+      sections.forEach((section) => {
+        const el = document.getElementById(section);
+        if (!el) return;
+
+        const top = el.offsetTop;
+        const bottom = top + el.offsetHeight;
+
+        if (scrollPos >= top && scrollPos < bottom) {
+          setActive(section);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav
@@ -61,9 +63,9 @@ const Navbar = () => {
           <li key={link.to}>
             <ScrollLink
               to={link.to}
-              smooth={true}
+              smooth
               duration={500}
-              offset={-80} // adjust for navbar height
+              offset={-80}
               className={`cursor-pointer transition hover:text-white ${
                 active === link.to ? "text-white font-bold" : ""
               }`}
@@ -74,10 +76,10 @@ const Navbar = () => {
         ))}
       </ul>
 
-      {/* Desktop Button */}
+      {/* Desktop CTA */}
       <ScrollLink
         to="contact"
-        smooth={true}
+        smooth
         duration={500}
         offset={-80}
         className="hidden md:block px-6 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition cursor-pointer"
@@ -85,8 +87,11 @@ const Navbar = () => {
         Let's Connect
       </ScrollLink>
 
-      {/* Mobile toggle */}
-      <button className="md:hidden text-gray-300" onClick={() => setOpen(!open)}>
+      {/* Mobile Toggle */}
+      <button
+        className="md:hidden text-gray-300"
+        onClick={() => setOpen((prev) => !prev)}
+      >
         {open ? (
           <svg className="w-8 h-8" fill="none" stroke="currentColor">
             <path strokeLinecap="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
@@ -101,14 +106,16 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         className={`absolute left-0 top-full w-full bg-dark md:hidden flex flex-col items-center gap-6 py-6 text-lg text-gray-300 font-medium transition-all duration-300 ${
-          open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+          open
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-4 pointer-events-none"
         }`}
       >
         {links.map((link) => (
           <ScrollLink
             key={link.to}
             to={link.to}
-            smooth={true}
+            smooth
             duration={500}
             offset={-80}
             className={`cursor-pointer hover:text-white transition ${
@@ -122,7 +129,7 @@ const Navbar = () => {
 
         <ScrollLink
           to="contact"
-          smooth={true}
+          smooth
           duration={500}
           offset={-80}
           className="px-6 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold transition cursor-pointer"
@@ -133,6 +140,4 @@ const Navbar = () => {
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}

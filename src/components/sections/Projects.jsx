@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import projectsData from "../data/projectsData";
-import SectionHeader from "./SectionHeader";
+import projectsData from "../../data/projectsData";
+import SectionHeader from "../common/SectionHeader";
 
 export default function Projects() {
   return (

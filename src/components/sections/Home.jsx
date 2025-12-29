@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import heroImg from "../assets/profile_img.jpg";
+import heroImg from "../../assets/images/profile_img.jpg";
 import {
   motion,
   useInView,

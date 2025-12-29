@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
-import Services_Data from "../data/services_data";
+import Services_Data from "../../data/services_data";
 import {
   motion,
   useInView,
   useScroll,
   useTransform,
 } from "motion/react";
-import SectionHeader from "./SectionHeader";
+import SectionHeader from "../common/SectionHeader";
 
 const fadeLeft = {
   hidden: { opacity: 0, x: -40 },
