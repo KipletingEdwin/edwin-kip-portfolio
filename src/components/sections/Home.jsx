@@ -52,8 +52,7 @@ const Home = () => {
         </h1>
 
         <p className="text-gray-300 text-lg md:text-xl leading-relaxed">
-          A passionate frontend developer creating smooth, modern, and interactive
-          user experiences using React, TailwindCSS, and animations.
+        Building clean, scalable, and visually refined interfaces that deliver smooth, meaningful user experiences and bring clarity to every interaction.
         </p>
 
         {/* BUTTONS */}
