@@ -1,36 +1,48 @@
-import React from 'react'
+import React from "react";
+import { motion } from "framer-motion";
 
-const SectionHeader = ({title, subtitle}) => {
+const SectionHeader = ({ title, subtitle, align = "center" }) => {
+  const alignment = align === "left" ? "items-start text-left" : "items-center text-center";
+
   return (
-    <div className='flex items-center justify-center flex-col text-center mb-12'>
-        <h1 className='text-3xl py-3 font-bold bg-linear-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent'>{title}</h1>
-        <p className='text-xl text-gray-300 max-w-2xl'>{subtitle}</p>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={`flex flex-col ${alignment} mb-12`}
+    >
+      {/* Title */}
+      <motion.h1
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="text-3xl md:text-4xl font-extrabold bg-linear-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent"
+      >
+        {title}
+      </motion.h1>
 
-    //       <div className="text-center max-w-2xl mx-auto mb-12">
-//         <h2 className="text-4xl font-bold text-white">{title}</h2>
-//         {subtitle && (
-//           <p className="text-gray-400 mt-3">
-//             {subtitle}
-//           </p>
-//         )}
-//       </div>
-  )
-}
+      {/* Accent underline */}
+      <motion.div
+        initial={{ width: 0 }}
+        whileInView={{ width: "60px" }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="h-[3px] bg-orange-500 rounded-full mt-2 mb-4"
+      />
 
-export default SectionHeader
+      {/* Subtitle */}
+      {subtitle && (
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-lg md:text-xl text-gray-300 max-w-2xl"
+        >
+          {subtitle}
+        </motion.p>
+      )}
+    </motion.div>
+  );
+};
 
-
-
-    //   <motion.div
-    //     variants={fadeLeft}
-    //     initial="hidden"
-    //     animate={inView ? "visible" : "hidden"}
-    //     className="flex items-center justify-center flex-col text-center mb-12"
-    //   >
-    //     <h1 className="text-3xl py-3 font-bold bg-linear-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">Services</h1>  
-    //     <p className="text-2xl text-gray-300 max-w-2xl">
-    //       Creative intuitive and user-friendly designs through UX research
-    //     </p>
-    //   </motion.div>
-  
+export default SectionHeader;
