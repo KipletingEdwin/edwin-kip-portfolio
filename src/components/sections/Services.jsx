@@ -3,16 +3,6 @@ import Services_Data from "../../data/services_data";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
 import SectionHeader from "../common/SectionHeader";
 
-// const fadeLeft = {
-//   hidden: { opacity: 0, x: -40 },
-//   visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
-// };
-
-// const fadeRight = {
-//   hidden: { opacity: 0, x: 40 },
-//   visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
-// };
-
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
@@ -34,7 +24,7 @@ const Services = () => {
   const inView = useInView(sectionRef, { once: true, margin: "-120px" });
 
   return (
-    <section id="services" ref={sectionRef} className="py-20 px-10 md:px-12">
+    <section id="services" ref={sectionRef} className="py-2 px-10 md:px-12">
       {/* Header */}
       <SectionHeader
         title="Services"

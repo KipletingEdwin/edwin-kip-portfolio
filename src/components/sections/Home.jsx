@@ -15,6 +15,21 @@ const fadeRight = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.7, delay: 0.2 } },
 };
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const roleContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.18,
+      delayChildren: 0.2,
+    },
+  },
+};
+
 const Home = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-150px" });
@@ -26,6 +41,12 @@ const Home = () => {
   });
 
   const parallaxY = useTransform(scrollYProgress, [0, 1], [0, -60]);
+
+  const roles = [
+    "Frontend Developer",
+    "UI/UX Designer",
+    "React & Motion Specialist",
+  ];
 
   return (
     <section
@@ -55,10 +76,11 @@ const Home = () => {
 
         {/* BUTTONS */}
         <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.4 }}
-         className="flex gap-4 mt-3">
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex gap-4 mt-3"
+        >
           <motion.button
             whileHover={{ scale: 1.08, boxShadow: "0 0 20px #ff7a00" }}
             whileTap={{ scale: 0.95 }}
@@ -76,25 +98,27 @@ const Home = () => {
           </motion.button>
         </motion.div>
 
-        {/* STATS */}
-        <div className="grid grid-cols-3 sm:grid-cols-3 gap-4 mt-10 max-w-md mx-auto">
-          {[
-            { num: "1+", label: "Years Experience" },
-            { num: "3+", label: "Projects" },
-            { num: "2+", label: "Clients" },
-          ].map((stat, i) => (
-            <motion.div
+        {/* ROLE*/}
+
+        {/* ROLE / SKILLS HIGHLIGHT BAR */}
+        <motion.div
+          variants={roleContainer}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="flex flex-wrap gap-4 mt-10"
+        >
+          {roles.map((role, i) => (
+            <motion.span
               key={i}
-              initial={{ opacity: 0, y: 15 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 1.6, delay: i * 0.38 }}
-              className="text-center p-4 rounded-xl border border-gray-700 bg-[#161616] hover:border-orange-500 transition-all shadow-lg hover:shadow-orange-500/40 wrap-break-word"
+              variants={fadeUp}
+              className="px-4 py-2 rounded-full border border-gray-700 bg-[#161616] 
+                  text-sm font-medium hover:border-orange-500 
+                 transition-all shadow-md hover:shadow-orange-500/20"
             >
-              <h3 className="text-3xl font-bold text-orange-400">{stat.num}</h3>
-              <p className="text-sm text-gray-400">{stat.label}</p>
-            </motion.div>
+              {role}
+            </motion.span>
           ))}
-        </div>
+        </motion.div>
       </motion.div>
 
       {/* RIGHT IMAGE — fade-right + parallax + floating */}
