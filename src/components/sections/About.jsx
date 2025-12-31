@@ -74,7 +74,7 @@ export default function About() {
               src={profile_img}
               alt="Profile"
               className="w-full object-cover"
-              whileHover={{ scale: 1.05 }}
+              //whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             />
           </motion.div>
