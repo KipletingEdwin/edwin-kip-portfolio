@@ -49,7 +49,7 @@ export default function About() {
   const parallaxY = useTransform(scrollYProgress, [0, 1], ["0px", "-60px"]);
 
   return (
-    <section id="about" ref={sectionRef} className="text-white py-20 px-6 md:px-12">
+    <section id="about" ref={sectionRef} className="text-white py-20 px-10 md:px-12">
       <SectionHeader
         title="About Me"
         subtitle="User Interface, User Experience, and Graphic Designer"

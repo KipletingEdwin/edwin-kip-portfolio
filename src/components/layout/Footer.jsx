@@ -28,7 +28,7 @@ export default function Footer() {
     <footer
       ref={footerRef}
       id="footer"
-      className="text-white py-14 px-6 bg-dark border-t border-white/10"
+      className="text-white py-14 px-10 bg-dark border-t border-white/10"
     >
       <div className="max-w-6xl mx-auto text-center space-y-8">
         {/* Logo */}

@@ -1,11 +1,7 @@
 import React, { useRef } from "react";
 import heroImg from "../../assets/images/profile_img.jpg";
-import {
-  motion,
-  useInView,
-  useScroll,
-  useTransform,
-} from "motion/react";
+import { motion, useInView, useScroll, useTransform } from "motion/react";
+import { delay } from "motion";
 
 // fade-left
 const fadeLeft = {
@@ -16,7 +12,7 @@ const fadeLeft = {
 // fade-right
 const fadeRight = {
   hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, delay: 0.2 } },
 };
 
 const Home = () => {
@@ -52,11 +48,17 @@ const Home = () => {
         </h1>
 
         <p className="text-gray-300 text-lg md:text-xl leading-relaxed">
-        Building clean, scalable, and visually refined interfaces that deliver smooth, meaningful user experiences and bring clarity to every interaction.
+          Building clean, scalable, and visually refined interfaces that deliver
+          smooth, meaningful user experiences and bring clarity to every
+          interaction.
         </p>
 
         {/* BUTTONS */}
-        <div className="flex gap-4 mt-3">
+        <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.4 }}
+         className="flex gap-4 mt-3">
           <motion.button
             whileHover={{ scale: 1.08, boxShadow: "0 0 20px #ff7a00" }}
             whileTap={{ scale: 0.95 }}
@@ -72,7 +74,7 @@ const Home = () => {
           >
             Contact Me
           </motion.button>
-        </div>
+        </motion.div>
 
         {/* STATS */}
         <div className="grid grid-cols-3 sm:grid-cols-3 gap-4 mt-10 max-w-md mx-auto">
@@ -85,7 +87,7 @@ const Home = () => {
               key={i}
               initial={{ opacity: 0, y: 15 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.18 }}
+              transition={{ duration: 1.6, delay: i * 0.38 }}
               className="text-center p-4 rounded-xl border border-gray-700 bg-[#161616] hover:border-orange-500 transition-all shadow-lg hover:shadow-orange-500/40 wrap-break-word"
             >
               <h3 className="text-3xl font-bold text-orange-400">{stat.num}</h3>

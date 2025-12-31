@@ -34,7 +34,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={"w-full fixed top-0 left-0 z-50 px-6 py-6 flex justify-between items-center bg-dark border-b border-white/10 transition-all duration-300 "}>
+    <nav className={"w-full fixed top-0 left-0 z-50 px-10 py-6 flex justify-between items-center bg-dark border-b border-white/10 transition-all duration-300 "}>
       {/* Logo */}
       <div className="text-3xl font-extrabold cursor-pointer" >
         <Link to="/" className="bg-linear-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text" >Edwin</Link>
