@@ -55,8 +55,11 @@ const Contact = () => {
   };
 
   // Fade-left / fade-right variants
-  const fadeLeft = { hidden: { opacity: 0, x: -40 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6 } } };
-  const fadeRight = { hidden: { opacity: 0, x: 40 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6 } } };
+  const fadeLeft = { hidden: { opacity: 0, x: -40 }, 
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6 } } };
+
+  const fadeRight = { hidden: { opacity: 0, x: 40 },
+   visible: { opacity: 1, x: 0, transition: { duration: 0.6 } } };
 
   return (
     <motion.section
@@ -82,7 +85,7 @@ const Contact = () => {
             type="text"
             name="firstName"
             placeholder="First Name"
-            className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-4 py-2 bg-[#1a1a1a] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
             required
           />
         </motion.div>
@@ -92,7 +95,7 @@ const Contact = () => {
             type="text"
             name="lastName"
             placeholder="Last Name"
-            className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-4 py-2 bg-[#1a1a1a] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
             required
           />
         </motion.div>
@@ -102,7 +105,7 @@ const Contact = () => {
             type="email"
             name="email"
             placeholder="Email"
-            className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-4 py-2 bg-[#1a1a1a] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
             required
           />
         </motion.div>
@@ -112,7 +115,7 @@ const Contact = () => {
             type="tel"
             name="phoneNumber"
             placeholder="Phone Number"
-            className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-4 py-2 bg-[#1a1a1a] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
           />
         </motion.div>
 
@@ -121,7 +124,7 @@ const Contact = () => {
             name="message"
             rows="5"
             placeholder="Project Details..."
-            className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-4 py-2 bg-[#1a1a1a] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
             required
           />
         </motion.div>
