@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import projectsData from "../../data/projectsData";
 import SectionHeader from "../common/SectionHeader";
+import { Link } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -58,25 +59,25 @@ export default function Projects() {
                 className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 
                     transition-all duration-300 flex items-center justify-center gap-3"
               >
-                <a
-                  href={project.demo}
+                <Link
+                  to={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 bg-orange-500 text-white text-sm font-medium rounded-lg 
                    hover:bg-orange-600 transition"
                 >
                   Live Demo
-                </a>
+                </Link>
 
-                <a
-                  href={project.code}
+                <Link
+                  to={project.code}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 bg-white text-gray-900 text-sm font-medium rounded-lg 
                    hover:bg-gray-200 transition"
                 >
                   Source Code
-                </a>
+                </Link>
               </div>
             </div>
 
