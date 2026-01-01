@@ -70,7 +70,7 @@ export default function About() {
             ref={parallaxRef}
             style={{ y: parallaxY }}
             variants={fadeLeft}
-            className="bg-[#1A1A1A] rounded-t-[200px] w-[320px] md:w-[380px] h-[480px] md:h-[520px] overflow-hidden"
+            className="bg-opacity-0 rounded-t-[200px] w-[320px] md:w-[380px] h-[480px] md:h-[520px] overflow-hidden"
           >
             <motion.img
               src={profile_img}
