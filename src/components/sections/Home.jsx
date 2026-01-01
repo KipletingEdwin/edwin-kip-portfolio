@@ -20,16 +20,6 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const roleContainer = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.18,
-      delayChildren: 0.2,
-    },
-  },
-};
-
 const Home = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-150px" });
@@ -102,7 +92,7 @@ const Home = () => {
 
         {/* ROLE / SKILLS HIGHLIGHT BAR */}
         <motion.div
-          variants={roleContainer}
+          variants={fadeLeft}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           className="flex flex-wrap gap-4 mt-10"
