@@ -6,26 +6,30 @@ const projectsData = [
   {
     id: 1,
     title: "iReporter",
-    category: "Website Design",
-    label: "UI/UX Design",
-    brand: "ZALWA",
+    label: "Full Stack",
+    brand: "Personal",
     image: iReporterImg,
+    demo: "https://your-demo-link.com",
+    code: "https://github.com/your-repo"
   },
+  
   {
     id: 2,
-    title: "Flight Booking App",
-    category: "Website Design",
-    label: "UI/UX Design",
+    title: "Portfolio Website",
+    label: "Frontend",
     brand: "Black. Minimal Portfolio.",
     image: flightBookingImg,
+    demo: "https://your-demo-link.com",
+    code: "https://github.com/your-repo"
   },
   {
     id: 3,
     title: "Employee Management System",
-    category: "Website Design",
     label: "UI/UX Design",
     brand: "UNDERCOVER",
     image: employeeImg,
+    demo: "https://your-demo-link.com",
+    code: "https://github.com/your-repo"
   },
 ];
 

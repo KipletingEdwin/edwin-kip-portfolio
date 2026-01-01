@@ -128,7 +128,7 @@ export default function Footer() {
           animate={isInView ? "visible" : "hidden"}
           className="text-xs text-gray-500 pt-4"
         >
-          Designed by{" "}
+          Designed by
           <span className="text-orange-500">@Edwin Kipleting</span>
         </motion.p>
       </div>

@@ -34,6 +34,8 @@ const skillCardVariant = {
 };
 
 export default function About() {
+
+  
   const sectionRef = useRef(null);
   const inView = useInView(sectionRef, { once: true, margin: "-100px" });
 
@@ -67,7 +69,7 @@ export default function About() {
           <motion.div
             ref={parallaxRef}
             style={{ y: parallaxY }}
-            variants={fadeUp}
+            variants={fadeLeft}
             className="bg-[#1A1A1A] rounded-t-[200px] w-[320px] md:w-[380px] h-[480px] md:h-[520px] overflow-hidden"
           >
             <motion.img
