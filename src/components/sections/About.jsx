@@ -51,7 +51,7 @@ export default function About() {
   const parallaxY = useTransform(scrollYProgress, [0, 1], ["0px", "-60px"]);
 
   return (
-    <section id="about" ref={sectionRef} className="text-white py-20 px-10 md:px-12">
+    <section id="about" ref={sectionRef} className="text-white py-20 px-2 md:px-12">
       <SectionHeader
         title="About Me"
         subtitle="User Interface, User Experience, and Graphic Designer"
@@ -62,7 +62,7 @@ export default function About() {
         variants={staggerContainer}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center"
+        className=" mx-auto grid md:grid-cols-2 gap-12 items-center"
       >
         {/* LEFT — IMAGE */}
         <motion.div variants={fadeLeft} className="flex justify-center">
@@ -83,7 +83,7 @@ export default function About() {
         </motion.div> 
 
         {/* RIGHT — TEXT */}
-        <motion.div variants={fadeRight} className="space-y-6">
+        <motion.div variants={fadeRight} className="space-y-6 p-2">
           <p className="text-gray-300 text-lg md:text-xl leading-relaxed">
             I am a passionate and detail-oriented UI/UX Designer dedicated to crafting seamless,
             user-friendly digital experiences. With a deep understanding of user behavior, I design
@@ -120,7 +120,7 @@ export default function About() {
           variants={staggerContainer}
           initial="hidden"
           animate={skillsInView ? "visible" : "hidden"}
-          className="container mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="container mx-auto px-2 grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {Skills_Data.map((skill) => (
             <motion.div key={skill.name} variants={skillCardVariant}>

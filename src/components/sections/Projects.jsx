@@ -21,7 +21,7 @@ const staggerContainer = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="max-w-6xl mx-auto px-10 py-12">
+    <section id="projects" className="max-w-6xl mx-auto px-10 py-12 ">
       {/* Header */}
       <SectionHeader
         title="Projects"
