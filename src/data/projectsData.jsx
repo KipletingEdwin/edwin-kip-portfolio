@@ -1,6 +1,6 @@
-import iReporterImg from "../assets/images/iReporter.jpg";
-import flightBookingImg from "../assets/images/flightbooking.png";
+import iReporterImg from "../assets/images/iReporter.png";
 import employeeImg from "../assets/images/Employee.png";
+import portfolioImg from "../assets/images/portfolio.png" 
 
 const projectsData = [
   {
@@ -19,7 +19,7 @@ const projectsData = [
     title: "Portfolio Website",
     label: "Frontend Development",
     category: "Personal Portfolio",
-    image: flightBookingImg,
+    image: portfolioImg,
     demo: "https://edwinkipleting.netlify.app/",
     code: "https://github.com/KipletingEdwin/edwin-kip-portfolio",
     tech: ["React", "Vite", "Tailwind", "Framer Motion"]
