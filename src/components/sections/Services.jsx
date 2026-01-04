@@ -24,7 +24,7 @@ const Services = () => {
   const inView = useInView(sectionRef, { once: true, margin: "-120px" });
 
   return (
-    <section id="services" ref={sectionRef} className="py-2 px-10 md:px-12">
+    <section id="services" ref={sectionRef} className="py-2 px-2 md:px-12">
       {/* Header */}
       <SectionHeader
         title="Services"
