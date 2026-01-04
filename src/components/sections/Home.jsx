@@ -42,7 +42,7 @@ const Home = () => {
     <section
       id="home"
       ref={ref}
-      className="w-full min-h-screen flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-24 overflow-hidden"
+      className="w-full min-h-screen flex flex-col md:flex-row items-center justify-between px-10 md:px-12 py-24 overflow-hidden"
     >
       {/* LEFT TEXT */}
       <motion.div
