@@ -16,13 +16,12 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    const firstName = form.current.firstName.value.trim();
-    const lastName = form.current.lastName.value.trim();
+    const fullName = form.current.fullName.value.trim();
     const email = form.current.email.value.trim();
     const phoneNumber = form.current.phoneNumber.value.trim();
     const message = form.current.message.value.trim();
 
-    if (!firstName || !lastName || !email || !message) {
+    if (!fullName || !email || !phoneNumber || !message) {
       toast.error("Please fill in all required fields.");
       return;
     }
