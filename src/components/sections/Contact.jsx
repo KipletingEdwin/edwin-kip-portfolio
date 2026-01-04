@@ -80,21 +80,13 @@ const Contact = () => {
         onSubmit={sendEmail}
         className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"
       >
-        <motion.div variants={fadeLeft}>
-          <input
-            type="text"
-            name="firstName"
-            placeholder="First Name"
-            className="w-full px-4 py-2 bg-[#1a1a1a] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
-            required
-          />
-        </motion.div>
 
-        <motion.div variants={fadeRight}>
+
+          <motion.div variants={fadeRight} className="md:col-span-2"   >
           <input
             type="text"
-            name="lastName"
-            placeholder="Last Name"
+            name="fullName"
+            placeholder=" Name"
             className="w-full px-4 py-2 bg-[#1a1a1a] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
             required
           />
@@ -123,7 +115,7 @@ const Contact = () => {
           <textarea
             name="message"
             rows="5"
-            placeholder="Project Details..."
+            placeholder="Message..."
             className="w-full px-4 py-2 bg-[#1a1a1a] text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
             required
           />
