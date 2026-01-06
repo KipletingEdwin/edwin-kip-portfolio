@@ -33,4 +33,22 @@ This portfolio showcases my work, skills, design philosophy, and contact informa
 ---
 
 ## 📂 Project Structure
+src/
+├── assets/          # Images & static files
+├── components/      # Reusable UI components
+├── data/            # Project & skills data
+├── pages/           # Main sections (Home, About, Projects, Contact)
+├── App.jsx                    # Root component
+└── main.jsx                  # Entry point
+
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/your-portfolio.git
+cd your-portfolio
+
 
